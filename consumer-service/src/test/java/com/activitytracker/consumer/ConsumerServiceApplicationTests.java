@@ -1,10 +1,10 @@
-package com.mouli.producer;
+package com.activitytracker.consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProducerServiceApplicationTests {
+class ConsumerServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

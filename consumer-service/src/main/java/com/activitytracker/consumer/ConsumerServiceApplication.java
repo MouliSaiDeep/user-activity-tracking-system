@@ -1,13 +1,13 @@
-package com.mouli.producer;
+package com.activitytracker.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProducerServiceApplication {
+public class ConsumerServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProducerServiceApplication.class, args);
+		SpringApplication.run(ConsumerServiceApplication.class, args);
 	}
 
 }
