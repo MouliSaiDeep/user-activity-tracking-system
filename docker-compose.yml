@@ -42,6 +42,11 @@ services:
     depends_on:
       rabbitmq:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
   consumer-service:
     build: ./consumer-service
     ports:
@@ -49,6 +54,8 @@ services:
     environment:
       RABBITMQ_HOST: rabbitmq
       RABBITMQ_PORT: 5672
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
       MYSQL_USER: ${MYSQL_USER}
@@ -60,3 +67,8 @@ services:
         condition: service_healthy
       mysql:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

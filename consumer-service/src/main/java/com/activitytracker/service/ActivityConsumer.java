@@ -19,8 +19,7 @@ public class ActivityConsumer {
 
     // Subscribing to user_activity_events queue and processing messages
     @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
-    public void consumeMessage(UserActivity event) {
-        try {
+    public void consumeMessage(UserActivityEvent event) throws com.fasterxml.jackson.core.JsonProcessingException {
             UserActivity activity = new UserActivity();
             activity.setUserId(event.getUserId());
             activity.setEventType(event.getEventType());
@@ -33,4 +32,3 @@ public class ActivityConsumer {
             System.err.println("Error processing event: " + e.getMessage());
         }
     }
-}
