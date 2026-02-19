@@ -18,7 +18,7 @@ public class UserActivityEvent {
 
     @NotNull(message = "Event type is required")
     @JsonProperty("event_type")
-    private String event_type;
+    private String eventType;
 
     @NotNull(message = "Timestamp is required")
     private LocalDateTime timestamp;
