@@ -1,13 +1,13 @@
-package com.activitytracker.producer;
+package com.activitytracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProducerServiceApplication {
+public class ProducerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProducerServiceApplication.class, args);
+		SpringApplication.run(ProducerApplication.class, args);
 	}
-
+	
 }

@@ -3,6 +3,7 @@ package com.activitytracker.model;
 import java.time.LocalDateTime;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ public class UserActivityEvent {
     private String eventType;
 
     @NotNull(message = "Timestamp is required")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime timestamp;
 
     private Map<String, Object> metadata;
